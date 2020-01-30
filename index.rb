@@ -6,30 +6,25 @@ CSV.open(file, 'w') do |row|
 
   members = []
 
-  headers = ["Name", "Love", "Reach", "Location", "Groups"]
+  headers = ["Name", "Love", "Reach", "Location"]
 
   row << headers
 
   # 5:15:30:50
 
   _distribution = [[1]*50, [2]*30, [3]*15, [4]*10, [5]*10].flatten
-  _pronouns = ["He / him", "She / her", "They / them"]
-  _groups = ["Ruby", "PHP", "JavaScript", "Python"]
+  _locations = [["San Francisco"]*8, ["Paris"]*5, ["London"]*3, ["Singapore"]*2, ["Melbourne"], ["Bengalore"]].flatten
 
   rows = []
 
-  100.times do |i|
+  1000.times do |i|
 
     name = "#{Faker::Name.first_name} #{Faker::Name.last_name}"
     love = _distribution.sample
     reach = _distribution.sample
+    location = _locations.sample
 
-    address = Faker::Address
-    location = address.city
-
-    groups = _groups.sample
-
-    rows << [name, love, reach, location, groups]
+    rows << [name, love, reach, location]
 
   end
 
