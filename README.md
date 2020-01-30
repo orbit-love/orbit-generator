@@ -25,3 +25,11 @@ ruby index.rb
 ```
 
 This will create a file called `members.csv` in the current directory. This file can then be uploaded to a spreadsheet or Airtable table.
+
+### Configuration
+
+By default, the script generates a community that is roughly 1:5:20:100 ratios of ambassador:fan:observer:user. You can change that to fit your ideal fake community by altering the coefficients like in this line.
+
+```
+  _distribution = [[1]*50, [2]*30, [3]*15, [4]*10, [5]*10].flatten
+  ```
